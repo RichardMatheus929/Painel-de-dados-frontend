@@ -1,0 +1,119 @@
+<style>
+    nav{
+        background-color: rgb(24, 24, 218);
+        height: 626px;
+        width: 170px;
+        position: absolute;
+        z-index: 1;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    .h1{
+        display: flex;
+        position: fixed;
+        margin-left: -170px;
+        margin-top: 16px;
+        
+    }
+    .h1 h1 {
+        color: rgb(255, 255, 255);
+        font-family: Lato ;
+        font-size: 23px;
+        position: fixed;
+    }
+    #fbr{
+        margin-left: 35px;
+    }
+    #buttn{
+   background-color: white;
+   border-radius: 10px;
+   padding: 10px 20px;
+   border: 1px;
+   cursor: pointer;
+   font-family: Cabin;
+   font-size: -50px;
+   font-family: Cabin;
+   display: flex;
+   margin-left: 45px;
+   margin-top: 290px;
+   border: 0.5px solid rgb(105, 105, 113);
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+#buttn:hover{
+background-color:gray ;
+color: white;
+font-family: Cabin;
+}
+
+.button-navbarLateral button{
+    margin-top: 200px;
+margin-left:50px;
+background-color: white;
+   border-radius: 10px;
+   border: 1px;
+   cursor: pointer;
+   font-family: Cabin;
+   font-size: -50px;
+   display: flex;
+   border: 0.5px solid rgb(105, 105, 113);
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+   padding: 10px 20px;
+   width: 80px;
+   height: 50px;
+   padding-left: 25px;
+   padding-top: 10px;
+   font-size: 20px;
+   transition: 0.3s;
+}
+
+.button-navbarLateral button:hover, .button-home-navbarLateral button:hover{
+    background-color: gray;
+    color: white;
+}
+
+
+.button-home-navbarLateral button{
+    margin-top: 250px;
+    margin-left:50px;
+background-color: white;
+   border-radius: 10px;
+   border: 1px;
+   cursor: pointer;
+   font-family: Cabin;
+   font-size: -50px;
+   display: flex;
+   border: 0.5px solid rgb(105, 105, 113);
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+   padding-left: 21px;
+   padding-top: 10px;
+   font-size: 14px;
+
+
+   width: 80px;
+   height: 40px;
+
+   transition: 0.3s;
+
+}
+
+
+</style>
+
+<nav>
+    <div class="h1">
+       <h1>Painel de Dados <br> <span id="fbr">Febrace</span> </h1> 
+    </div>
+    
+    <div class="button-navbarLateral">
+        <button onclick="redirecionarParaRota('/pesquisa')">  🔎 </button>
+    </div>
+    
+    
+
+    <div class="button-home-navbarLateral">
+        <button onclick="redirecionarParaRota('/')"> 
+            Home
+        </button>
+    </div>
+
+</nav>

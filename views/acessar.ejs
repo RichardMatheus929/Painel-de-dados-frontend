@@ -1,0 +1,546 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel de Dados Febrace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/acessar.css" />
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABWklEQVR4AWIgBph2uGswkAqeb1biebZJiRFsQLtHKikaWV5sU1oJqIwcQCuMogCcNTvMtm0/23nK9rMZ5mVMaWm20rJn2zbvzj+ndV91fM53cQ4GQ95Alvb7g8PSzWQ5iCcWAAZ4h0Mh6Gg0FB2OhCKAdWaaKOIME6UaDzAQXHU4DICxH0B/lpEqzjRSu/AAfcHucPV1AnIwFPIMN6Lk6OktAFkn6rgQFxhkg4QXaJmxeTrGfY6B9mD3JkpVnIgiDWsTIChPT9+xa5is4FHLldyLEjUbAQQV6Bh12MN0maCcKuc/khQ8VKbioGI1e6VQy3TFGmbIhH50mfCMJhMgipyP4BYr8JTgJFtZJC6gDQTRAQCQGXiKF5FPtpbX4AIuQBDINNzEkcjBCiWpFlIDLuAWZA7EhYjhCSrYwgtAaLiAHpC0L19MlfEPSlVsChHjAnz++JUgUf/1vwOxuZ9wArBu/gAAAABJRU5ErkJggg==" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Lato:wght@100&display=swap" rel="stylesheet">  
+</head>
+  <body>
+    
+  
+  
+<div class="div_pagina">
+  
+  
+
+      <div class="class_botoes">
+        <%- include('./components/botoes.ejs') %>
+      </div>
+
+
+
+  
+
+  </div>
+  
+  <%- include('./components/navbarLateral.ejs') %>
+
+ </div>
+
+
+
+      <div class="class_mapa">
+        <div>
+          <%- include('./components/mapadobrasil.ejs') %>
+        </div>
+      </div>
+
+      <div class="class_legenda">
+        <div>
+          <%- include('./components/legenda.ejs') %>
+        </div>
+      </div>
+
+      <div class="class_total">
+        <div>
+          <%- include('./components/total.ejs') %>
+        </div>
+      </div>
+   
+      <div class="class_ranking">
+        <div>
+          <%- include('./components/ranking.ejs') %>
+        </div>
+      </div>
+
+      <div>
+        <%- include('./components/rodapeAcessar.ejs') %>
+      </div>
+
+      
+
+</div>
+    
+  
+    
+      
+
+    <script>
+
+    function carregarPagina() {
+      var path = window.location.pathname;
+      
+      var rotasDesejadas = [
+        "/2023",
+        "/2022",
+        "/2021",
+        "/2020",
+        "/2019",
+        "/2018"
+      ];
+
+      if (rotasDesejadas.includes(path)) {
+        var div = document.getElementById("myDiv");
+        var footer = document.getElementById("foot")
+        
+        const txtP = document.getElementById("escolaP_h3");
+        const txtS = document.getElementById("escolaS_h3");
+        const txtT = document.getElementById("escolaT_h3");
+
+        const imgP = document.getElementById("primeiro");
+        const imgS = document.getElementById("segundo");
+        const imgT = document.getElementById("terceiro");
+
+        const h1 = document.getElementById("h1_recado");
+
+        footer.style.marginTop = "-20px"
+
+        txtP.style.visibility = "hidden";
+        txtS.style.visibility = "hidden";
+        txtT.style.visibility = "hidden";
+
+        imgP.style.marginLeft = "346px"
+        imgP.style.marginTop = "30px"
+
+        imgS.style.marginLeft = "260px"
+        imgS.style.marginTop = "-70px"
+
+        imgT.style.marginLeft = "425px"
+        imgT.style.marginTop = "-85.5px"
+
+        h1.innerHTML = "Passe o mouse para visualizar o ranking das escolas do ano de " + path.substring(1) + "."
+        h1.style.fontFamily = "Cabin"
+        h1.style.fontSize = "25px"
+        h1.style.marginTop = "180px"
+        h1.style.marginLeft = "-380px"
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", carregarPagina);
+
+
+      function expandDiv(element) {
+
+const primeiro = document.getElementById("primeiro")
+const segundo = document.getElementById("segundo")
+const terceiro = document.getElementById("terceiro")
+
+const txtP = document.getElementById("escolaP_h3");
+const txtS = document.getElementById("escolaS_h3");
+const txtT = document.getElementById("escolaT_h3");
+
+const imgP = document.getElementById("primeiro");
+const imgS = document.getElementById("segundo");
+const imgT = document.getElementById("terceiro");
+
+const h1 = document.getElementById("h1_recado");
+
+var footer = document.getElementById("foot")
+
+if (shouldExpandDiv()) {
+imgP.style.marginLeft = "-30px"
+imgS.style.marginLeft = "-30px"
+imgT.style.marginLeft = "-30px"
+
+footer.style.marginTop = "-70px";
+
+element.style.height = "600px"; 
+element.style.marginTop = "-585px"
+element.style.zIndex = "2";
+element.style.backgroundColor = "rgb(255, 248, 248)";
+element.style.cursor = "pointer";
+
+primeiro.style.marginTop = "60px"
+segundo.style.marginTop = "170px"
+terceiro.style.marginTop = "160px"
+
+txtP.style.marginTop = "50px"
+txtS.style.marginTop = "40px"
+txtT.style.marginTop = ""
+
+txtP.style.visibility = "visible";
+txtS.style.visibility = "visible";
+txtT.style.visibility = "visible";
+
+h1.style.visibility = "hidden";
+}
+}
+
+/// quando tira o mouse de cima da div 
+function shrinkDiv(element) {
+  const h1 = document.getElementById("h1_recado");
+
+const primeiro = document.getElementById("primeiro")
+const segundo = document.getElementById("segundo")
+const terceiro = document.getElementById("terceiro")
+
+const txtP = document.getElementById("escolaP_h3");
+const txtS = document.getElementById("escolaS_h3");
+const txtT = document.getElementById("escolaT_h3");
+
+const imgP = document.getElementById("primeiro");
+const imgS = document.getElementById("segundo");
+const imgT = document.getElementById("terceiro");
+
+var footer = document.getElementById("foot")
+
+if (shouldExpandDiv()) {
+
+element.style.height = "280px"; 
+element.style.marginTop = "-315px"
+
+primeiro.style.marginTop = "20px"
+segundo.style.marginTop = "30px"
+terceiro.style.marginTop = "40px"
+
+footer.style.marginTop = "-20px"
+
+        txtP.style.visibility = "hidden";
+        txtS.style.visibility = "hidden";
+        txtT.style.visibility = "hidden";
+
+        h1.style.visibility = "visible";
+        
+        imgP.style.marginLeft = "346px"
+        imgP.style.marginTop = "30px"
+
+        imgS.style.marginLeft = "260px"
+        imgS.style.marginTop = "-70px"
+
+        imgT.style.marginLeft = "425px"
+        imgT.style.marginTop = "-85.5px"
+
+        h1.innerHTML = "Passe o mouse para visualizar o ranking das escolas do ano de " + path.substring(1) + "."
+        h1.style.fontFamily = "Cabin"
+        h1.style.fontSize = "25px"
+        h1.style.marginTop = "180px"
+        h1.style.marginLeft = "-410px"
+
+}
+}
+function shouldExpandDiv() {
+const allowedRoutes = ["/2023", "/2022", "/2021", "/2020", "/2019", "/2018"];
+const currentPath = window.location.pathname;
+return allowedRoutes.includes(currentPath);
+}
+    
+
+
+
+
+      //DIRECIONAR O BOTÃO PARA DETERMINADA ROTA  
+      function redirecionarParaRota(rota) {
+        window.location.href = rota;
+      }
+      
+     /// HOVER DO MAPA 
+     const mapa = document.getElementById('mapa_doBR');
+    const estados = mapa.querySelectorAll('path');  
+
+      estados.forEach(estado => {
+      estado.addEventListener('mouseenter', () => {
+      estado.style.fill = 'gray'; // Cor de destaque
+      });
+
+      estado.addEventListener('mouseleave', () => {
+      estado.style.fill = ''; // Volta à cor original
+      });
+      });
+
+      
+
+
+
+    // Botão de 2023
+    function applyButtonStyle1() {
+      var button = document.getElementById("button1");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white_button1");
+      } else if (currentPath === "/2023") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    applyButtonStyle1();
+
+    document.getElementById("button1").addEventListener("click", function() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          applyButtonStyle1();
+        }
+      };
+      xhttp.open("POST", "/2023", true);
+      xhttp.send();
+    });
+
+
+
+
+
+
+    // Botão de 2022 
+    function applyButtonStyle2() {
+      var button = document.getElementById("button2");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white-button1");
+      } else if (currentPath === "/2022") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    function applyButtonStyle2() {
+      var button = document.getElementById("button2");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white_button1");
+      } else if (currentPath === "/2022") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    applyButtonStyle2();
+
+    document.getElementById("button2").addEventListener("click", function() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          applyButtonStyle2();
+        }
+      };
+      xhttp.open("POST", "/2022", true);
+      xhttp.send();
+    });
+
+
+
+
+
+    // botao de 2021
+    function applyButtonStyle3() {
+      var button = document.getElementById("button3");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white-button1");
+      } else if (currentPath === "/2021") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    function applyButtonStyle3() {
+      var button = document.getElementById("button3");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white_button1");
+      } else if (currentPath === "/2021") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    applyButtonStyle3();
+
+    document.getElementById("button3").addEventListener("click", function() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          applyButtonStyle3();
+        }
+      };
+      xhttp.open("POST", "/2021", true);
+      xhttp.send();
+    });
+
+    // botao de 2020
+    function applyButtonStyle4() {
+      var button = document.getElementById("button4");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white-button1");
+      } else if (currentPath === "/2020") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    function applyButtonStyle4() {
+      var button = document.getElementById("button4");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white_button1");
+      } else if (currentPath === "/2020") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    applyButtonStyle4();
+
+    document.getElementById("button4").addEventListener("click", function() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          applyButtonStyle4();
+        }
+      };
+      xhttp.open("POST", "/2020", true);
+      xhttp.send();
+    });
+
+
+
+
+    // botao de 2019
+    function applyButtonStyle5() {
+      var button = document.getElementById("button5");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white-button1");
+      } else if (currentPath === "/2019") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    function applyButtonStyle5() {
+      var button = document.getElementById("button5");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white_button1");
+      } else if (currentPath === "/2019") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    applyButtonStyle5();
+
+    document.getElementById("button5").addEventListener("click", function() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          applyButtonStyle5();
+        }
+      };
+      xhttp.open("POST", "/2019", true);
+      xhttp.send();
+    });
+
+
+
+      // botao 2018
+      function applyButtonStyle6() {
+      var button = document.getElementById("button6");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white-button1");
+      } else if (currentPath === "/2018") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    function applyButtonStyle6() {
+      var button = document.getElementById("button6");
+      var currentPath = window.location.pathname;
+
+      if (currentPath === "/acessar") {
+        button.classList.remove("button1");
+        button.classList.add("white_button1");
+      } else if (currentPath === "/2018") {
+        button.classList.remove("white-button1");
+        button.classList.add("button1");
+      }
+    }
+    applyButtonStyle6();
+
+    document.getElementById("button6").addEventListener("click", function() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          applyButtonStyle6();
+        }
+      };
+      xhttp.open("POST", "/2018", true);
+      xhttp.send();
+    });
+
+
+
+
+    
+    // Função para mover o elemento h1 por 150px no margin-left
+function moveHeading() {
+  const heading = document.getElementById('h3_move');
+  const heading1 = document.getElementById('h5_move');
+  
+  heading.style.marginLeft = '15px';
+  heading1.style.marginLeft = '10px';
+}
+
+function moveHeading1(){
+  const heading2 = document.getElementById('h1_id');
+  heading2.style.marginLeft= '190px'
+}
+function checkRouteAndMove() {
+  const currentRoute = window.location.pathname;
+
+  if (currentRoute === '/inicio') {
+    moveHeading();
+  }
+  if (currentRoute === '/2023') {
+    moveHeading1();
+  }
+  if (currentRoute === '/2018') {
+    moveHeading1();
+  }
+  if (currentRoute === '/2019') {
+    moveHeading1();
+  }
+}
+
+// Verifique a rota ao carregar a página
+window.onload = checkRouteAndMove;
+
+
+
+
+
+
+  </script>
+</body>
+</html>
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<style>
+.legenda{
+  margin-left: -20px;
+  margin-top:20px;
+  transform: scale(0.7); 
+  border: 0.5px solid rgb(12, 12, 78);
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 430px;
+  height: 300px; 
+  /* transform: translate(200px, 100px); */
+} 
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-left: 85px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: bold;
+  
+}
+
+.color-box {
+  width: 25px;
+  height: 25px;
+  margin-left:-65px;
+  border: 1px solid rgb(105, 105, 113);
+  display: flex;
+  align-items: center;quotes: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 14px;
+  font-family: Cabin;
+}
+h1{
+position: fixed;
+  margin-top: 15px;
+margin-left: 180px;
+}
+h3{
+  margin-left: 40px;
+  margin-top:60px;
+}
+h1,h3 {
+    font-family: Cabin;
+}
+.label span {
+  font-size: 16.5px;
+}
+</style>
+
+  <div class="legenda">
+    <div>
+      
+    </div>
+   <h1 id="h1_id"><span><%=data%></span></h1>
+
+   <h3 id="h3_move"><%=anos%></h3>
+
+   
+<div class="legend">
+  <div class="legend-item">
+      <span class="color-box" style="background-color: #4ae623;"></span>
+      <span class="label"><span><%=sudeste%> escolas foram premiadas na região sudeste.</span>
+    </div>
+    <div class="legend-item">
+      <span class="color-box" style="background-color:rgb(88, 34, 214);"></span>
+      <span class="label"><span><%=nordeste%> escolas foram premiadas na região nordeste.</span>
+    </div> 
+    <div class="legend-item">
+      <span class="color-box" style="background-color: #e62323;"></span>
+      <span class="label"><span><%=sul%> escolas foram premiadas na região sul.</span>
+    </div>
+    <div class="legend-item">
+      <span class="color-box" style="background-color:#f6a935;"></span>
+      <span class="label"><span><%=norte%>  escolas foram premiadas na região norte.</span>
+    </div>
+    <div class="legend-item">
+      <span class="color-box" style="background-color:#7f2d6f;"></span>
+      <span class="label"><span><%=centro%> escolas foram premiadas na região centro-oeste.</span>
+    </div>
+   
+    
+</div> 
+  </div>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa Painel Febrace</title>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABWklEQVR4AWIgBph2uGswkAqeb1biebZJiRFsQLtHKikaWV5sU1oJqIwcQCuMogCcNTvMtm0/23nK9rMZ5mVMaWm20rJn2zbvzj+ndV91fM53cQ4GQ95Alvb7g8PSzWQ5iCcWAAZ4h0Mh6Gg0FB2OhCKAdWaaKOIME6UaDzAQXHU4DICxH0B/lpEqzjRSu/AAfcHucPV1AnIwFPIMN6Lk6OktAFkn6rgQFxhkg4QXaJmxeTrGfY6B9mD3JkpVnIgiDWsTIChPT9+xa5is4FHLldyLEjUbAQQV6Bh12MN0maCcKuc/khQ8VKbioGI1e6VQy3TFGmbIhH50mfCMJhMgipyP4BYr8JTgJFtZJC6gDQTRAQCQGXiKF5FPtpbX4AIuQBDINNzEkcjBCiWpFlIDLuAWZA7EhYjhCSrYwgtAaLiAHpC0L19MlfEPSlVsChHjAnz++JUgUf/1vwOxuZ9wArBu/gAAAABJRU5ErkJggg==" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Lato:wght@100&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/pesquisa.css">
+  
+</head>
+
+
+
+
+
+<body>
+
+    <div>
+        <%- include('./components/navbarPesquisa.ejs') %>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <form action="/pesquisa" method="get">
+        <input class="search-txt" id="pesquisar" type="text" name="pesquisa" placeholder="Digite o nome da escola, orientador, cidade, estado, premiação ou ano desejado." autocomplete="off">
+        
+    </form>
+  </div>
+
+<!-- um grande se para fazer a lógica da pesquisa -->
+  <% if (resultados.length > 0) { %>
+    <br> <hr> <ul>
+      <% resultados.forEach(resultado => { %>
+        <li>
+          <% if (resultado.Escola) { %>
+            <strong>Escola:</strong> <%= resultado.Escola %><br>
+            <strong>Orientadores:</strong> <%= resultado.Orientadores %><br>
+            <strong>Cidade:</strong> <%= resultado.Cidade %><br>
+            <strong>Estado:</strong> <%= resultado.Estado %><br>
+            <strong>Ano:</strong> <%= resultado.Anos %><br>
+            <strong>Quantidade de premios:</strong> <%= resultado.qntdpremiacao %><br>
+            <strong>Premios:</strong> <%= resultado.Premios %><br>
+
+          <% } else if (resultado.Cidade) { %>
+            <strong>Escola:</strong> <%= resultado.Escola %><br>
+            <strong>Cidade:</strong> <%= resultado.Cidade %><br>
+            <strong>Estado:</strong> <%= resultado.Estado %><br>
+            <strong>Ano:</strong> <%= resultado.Anos %><br>
+            <strong>Quantidade de premios:</strong> <%= resultado.qntdpremiacao %><br>
+            <strong>Premios:</strong> <%= resultado.Premios %><br>
+
+          <% } else if (resultado.Estado) { %>
+            <strong>Escola:</strong> <%= resultado.Escola %><br>
+            <strong>Cidade:</strong> <%= resultado.Cidade %><br>
+            <strong>Estado:</strong> <%= resultado.Estado %><br>
+            <strong>Ano:</strong> <%= resultado.Anos %><br>
+            <strong>Quantidade de premios:</strong> <%= resultado.qntdpremiacao %><br>
+            <strong>Premios:</strong> <%= resultado.Premios %><br>
+                  
+          <% } else if (resultado.Premios) { %>
+            <strong>Escola:</strong> <%= resultado.Escola %><br>
+            <strong>Cidade:</strong> <%= resultado.Cidade %><br>
+            <strong>Estado:</strong> <%= resultado.Estado %><br>
+            <strong>Ano:</strong> <%= resultado.Anos %><br>
+            <strong>Quantidade de premios:</strong> <%= resultado.qntdpremiacao %><br>
+            <strong>Premios:</strong> <%= resultado.Premios %><br>
+
+            <% } else if (resultado.Anos) { %>
+              <strong>Escola:</strong> <%= resultado.Escola %><br>
+              <strong>Cidade:</strong> <%= resultado.Cidade %><br>
+              <strong>Estado:</strong> <%= resultado.Estado %><br>
+              <strong>Ano:</strong> <%= resultado.Anos %><br>
+              <strong>Quantidade de premios:</strong> <%= resultado.qntdpremiacao %><br>
+              <strong>Premios:</strong> <%= resultado.Premios %><br>
+                <% } %>
+        </li> <hr>
+      <% }); %>
+    </ul>
+  <% } else if (pesquisa) { %>
+    <p>Nenhum resultado encontrado para "<%= pesquisa %>"</p>
+  <% } %>
+  
+
+
+
+  <script>
+    
+    function redirecionarParaRota(rota) {
+      window.location.href = rota;
+    }
+
+
+
+    window.onload = function() {
+    const pesquisa = '<%= pesquisa %>';
+    if (pesquisa) {
+        let bodyText = document.body.innerHTML;
+        const highlightComeço = '<span class="highlight">';
+        const highlightFinal = '</span>';
+        const regex = new RegExp(`(${escapaElements(pesquisa)})`, 'gi');
+        bodyText = bodyText.replace(regex, `${highlightComeço}$1${highlightFinal}`);
+        document.body.innerHTML = bodyText;
+    }
+};
+
+    function escapaElements(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+
+  
+    </script>
+   
+</body>
+</html>

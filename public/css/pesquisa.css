@@ -1,0 +1,42 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255, 248, 248);
+
+}
+#pesquisar{
+    margin-top: 30px;
+    width: 700px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 0.5px solid rgb(12, 12, 78);
+    background-color: rgb(255, 248, 248);
+    color: black;
+    font-family: Cabin;
+}
+
+ul {
+    font-family: Cabin;
+    list-style: none;
+    color: black;
+    margin-left: -20px;
+    margin-top: 20px;
+}
+
+hr {
+    margin-left: -350px;
+    margin-top: 30px;
+    height: -60px;
+    margin-bottom: 20px;
+}
+
+#lupa{
+    width: 150px;
+    height: 50px;
+}
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}

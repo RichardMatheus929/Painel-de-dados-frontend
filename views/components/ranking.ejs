@@ -1,0 +1,114 @@
+<style>
+    .ranking{
+    
+    margin-left: 560px;
+    margin-top: -315px;
+    transform: scale(0.7); 
+    border: 0.5px solid rgb(12, 12, 78);
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 880px;
+    height: 280px; 
+    transition: all 0.3s ease-in-out;
+  align-items: flex-end; 
+  } 
+  
+
+  .primeiro img{
+    display: flex;
+    margin: 50px;
+    width: 48px;
+    height: 48px;
+    margin-top: 40px;
+    margin-left: 26px;
+  }
+  .segundo img{
+    display: flex;
+    margin-top: 95px;
+    margin-left:75px;
+    width: 48px;
+    height: 48px;
+  }
+  .terceiro img{
+    margin-top: 85px;
+    margin-left:75px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+  }
+
+  h3{
+    color: black;
+    font-family: Cabin;
+  }
+  .Escola_primeiro{
+    display: flex;
+    width: 720px;
+    height: 15px;
+    margin-left: 60px;
+    margin-top: -165px;
+  }
+  .Escola_segundo{
+    display: flex;
+    width: 720px;
+    height: 15px;
+    margin-left: 105px;
+    margin-top: -105px;
+  }
+  .Escola_terceiro{
+    width: 720px;
+    height: 15px;
+    margin-left: 105px;
+    margin-top: -105px;
+  }
+  .tudo_rank{
+    margin-top: -15px;
+    margin-left: 50px;
+  }
+
+.escolaP{
+visibility: visible;
+}
+.escolaS{
+visibility: visible;
+}
+.escolaT{
+visibility: visible;
+}
+
+
+</style>
+
+<div class="ranking" id="myDiv" onmouseenter="expandDiv(this)" onmouseleave="shrinkDiv(this)">
+    <div class="tudo_rank">
+      <div class="primeiro" id="primeiro">
+        <img  id="primeiro"  src="https://img.icons8.com/emoji/96/1st-place-medal-emoji.png" alt="1st-place-medal-emoji"/>
+        <div class="Escola_primeiro">
+          <h1 id="h1_recado"></h1>
+          <h3 class="escolaP" id="escolaP_h3"><%=escola%></h3>
+        </div>
+      </div>
+      </div>
+  
+  
+      <div class="segundo" id="segundo">
+        <img id="segundo" width="48" height="48" src="https://img.icons8.com/emoji/96/2nd-place-medal-emoji.png" alt="2nd-place-medal-emoji"/>
+        <div class="Escola_segundo">
+          <h3 class="escolaS" id="escolaS_h3"><%=escola2%></h3>
+        </div>
+      </div>
+  
+    
+  
+      <div class="terceiro" id="terceiro">
+        <img id="terceiro" width="48" height="48" src="https://img.icons8.com/emoji/96/3rd-place-medal-emoji.png" alt="3rd-place-medal-emoji"/>
+        <div class="Escola_terceiro">
+          <h3 class="escolaT" id="escolaT_h3"><%=escola3%></h3>
+        </div>
+      </div>
+    </div>
+   
+
+   
+   </div>

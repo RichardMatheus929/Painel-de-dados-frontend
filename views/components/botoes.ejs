@@ -1,0 +1,86 @@
+<style> 
+.div_botoes{
+  display: flex;
+  position: absolute;
+  margin-left: 17px;
+  margin-top: 14px;
+}
+
+/* estilo das posições */
+.botoes {
+text-align: center; 
+justify-content: center;
+display: flex;
+transition: 0.3s;
+}
+
+.botoes input {
+  margin:5px;
+}
+
+/* estilo dos botões */
+input {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: 1px;
+  cursor: pointer;
+  font-family: Cabin;
+  margin: 10px;
+  display: flex;
+  margin-top: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.white_button1{
+  background-color: rgb(255, 255, 255);
+}
+.button1{
+  background-color: gray;
+}
+#button0{
+  text-align: center; /* Alinhamento horizontal do texto */
+    padding: 15px;
+    padding-left: 13px;
+    padding-top: 10px;
+    width: 75px;
+    height: 36px;
+} 
+input:hover{
+  background-color: gray;
+}
+
+</style>
+
+<div class="div_botoes">
+    <div class="botoes">
+      <form method="get" action="/inicio" class="ano-button">
+        <input id="button0" type="submit" value="Redefinir" class="white_button1"/>
+      </form>  
+
+    <form method="post" action="/2023" class="ano-button" data-year="2023">
+      <input id="button1" type="submit" value="2023" class="white_button1"  />
+    </form>
+
+    <form method="post" action="/2022" class="ano-button" data-year="2022">
+      <input id="button2"  type="submit" value="2022" class="white_button1"/>
+    </form>
+
+    <form method="post" action="/2021" class="ano-button" data-year="2021">
+      <input id="button3"  type="submit" value="2021" class="white_button1"/>
+    </form>
+
+    <form method="post" action="/2020" class="ano-button" data-year="2020">
+      <input id="button4"  type="submit" value="2020" class="white_button1"/>
+    </form>
+    
+    <form method="post" action="/2019" class="ano-button" data-year="2019">
+      <input id="button5"  type="submit" value="2019" class="white_button1"/>
+    </form>
+    
+    <form method="post" action="/2018" class="ano-button" data-year="2018">
+      <input id="button6"  type="submit" value="2018" class="white_button1"/>
+    </form>
+    </div>
+  </div>

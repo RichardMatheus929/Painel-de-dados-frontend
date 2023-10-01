@@ -1,0 +1,31 @@
+{
+  "name": "sistemaweb",
+  "version": "1.0.0",
+  "description": "Sistema testando node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "keywords": [
+    "ATALIBArm_2018"
+  ],
+  "author": "Richard Matheus Bezerra Ataliba",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "diacritics": "^1.3.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongo": "^0.1.0",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.3",
+    "node": "^20.5.0",
+    "nodemon": "^3.0.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "ejs-lint": "^2.0.0"
+  }
+}

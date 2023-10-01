@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    transparent url(../img/bg.png) repeat left top;
+      background-image: url(https://eaj.ufrn.br/img/bg.png);
+      background-position-x: left;
+      background-position-y: top;
+      background-size: initial;
+      background-repeat-x: repeat;
+      background-repeat-y: repeat;
+      background-attachment: initial;
+      background-origin: initial;
+      background-clip: initial;
+      background-color: transparent;
+      overflow: hidden;
+}
+.textos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 800px;
+    border: 1px solid rgb(24, 24, 218);
+    margin-top: 90px;
+    margin-left: 270px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .textos h1, h3{
+  margin: 10px 0;
+  font-family: Cabin;
+  }
+
+
+
+input {
+    justify-content: center;
+     display: flex;
+     align-items: center;
+     gap: 0;
+     font-family: Cabin;
+     border-radius: 1px;
+     border-color: white ;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   }
+   input{
+   border-radius: 10px;
+   padding: 10px 20px;
+   border: 1px;
+   cursor: pointer;
+   font-family: Cabin;
+   font-size: -50px;
+   border: 1px solid rgb(24, 24, 218);
+   margin-left: -12px;
+   }
+   
+   input:hover{
+    color: rgb(24, 24, 218);
+    font-family: Cabin;
+   }
+
+.div_botoes{
+    justify-content: center;
+     display: flex;
+     align-items: center;
+
+}

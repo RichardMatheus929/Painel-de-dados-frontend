@@ -1,0 +1,86 @@
+<style>
+  body{
+    padding: 0;
+    margin: 0;
+  }
+
+    nav{
+    background-color: rgb(24, 24, 218);
+  height: 100px;
+}
+
+.painel h1{
+  color: white;
+  font-family: Lato ;
+  margin-left:1030px;
+  margin-top: 15px;
+  display: flex;
+  width: 246px;
+}
+.botoes input{
+  margin-top: 1100px;
+  display: flex;
+
+}
+
+.botoes #buto{
+  margin-top: -50px;
+  margin-left: 100px;
+  transition: 0.3s;
+}
+
+.botoes #buto:hover{
+  background-color: gray;
+}
+
+.botoes #buton-pesquisa{
+  background-color: white;
+  border-radius: 10px;
+  padding: 9px 22px;
+  border: .5px solid gray;
+  cursor: pointer;
+  font-family: Cabin;
+  margin: 10px;
+  display: flex;
+  margin-top: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+  margin-left:200px;
+  width: 65px;
+  margin-top: -37px;
+
+  transition: 0.3s;
+}
+
+.botoes #buton-pesquisa:hover{
+background-color: gray;
+}
+
+</style>
+
+<nav>
+
+  <br>
+    <div class="painel">
+      <h1>Painel de Dados Febrace </h1> 
+   </div>
+
+  <div class="botoes">
+    <input
+      id="buto"
+      onclick="redirecionarParaRota('/inicio')"
+      type="button"
+      value="Voltar"
+    />
+   
+  </div> 
+  
+  <div class="botoes">
+    <input
+      id="buton-pesquisa"
+      onclick="redirecionarParaRota('/pesquisa')"
+      type="button"
+      value="🔎"
+    />
+  </div>
+  </nav>
